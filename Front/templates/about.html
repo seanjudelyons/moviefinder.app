@@ -1,0 +1,36 @@
+
+{% extends "layout.html" %}
+{% block content %}
+    <article class="media content-section">
+        <div class="media-body">      
+            <h4>About this project</h4>
+          <div class="article-metadata">
+          </div>
+          <p>Hi, my name is Sean.  I have been using this web app to find movies; I thought some people might find it useful.  The easiest way to contact me is through the University of Sydney.  Alternatively, I can also be contacted at seanjudelyons@gmail.com.</p>
+        </div>
+      </article>
+    <article class="media content-section">
+      <div class="media-body">      
+          <h4>How to search?</h4>
+        <div class="article-metadata">
+        </div>
+        <p>A focused plot usually yields the most interesting results.  For example, try searching-"A young boy is raised in the jungle by apes".</p>
+      </div>
+    </article>
+    <article class="media content-section">
+      <div class="media-body">      
+          <h4>How does this work?</h4>
+        <div class="article-metadata">
+        </div>
+        <p>This web app is using a machine learning library called "scikit-learn".  This web app has no conventional databases, nor does it record any user data.  The web app primarily functions off machine learning vectors.  The front is visually presented with flask and some bootstrap.</p>
+      </div>
+    </article>
+    <article class="media content-section">
+      <div class="media-body">      
+          <h4>Learn more</h4>
+        <div class="article-metadata">
+        </div>
+        <p>Once the query is recieved, the query is transformed the sentence(s) into a sequence of numbers called "vectors".  These numbers are then checked against thousands of plots.  Once the plots are found, the movies with similar plots are returned.</p>
+      </div>
+    </article>
+{% endblock content %}

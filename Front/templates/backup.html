@@ -1,0 +1,79 @@
+this is the classic
+
+{% extends "layout.html" %}
+{% block content %}
+    <div class="content-section">
+        <form method="POST" action="">
+            {{ form.hidden_tag() }}
+            <fieldset class="form-group">
+                <legend class="border-bottom mb-4">Search</legend>
+                <div class="form-group">
+                
+                    {{ form.query.label(class="form-control-label") }}
+                    {{ form.query(class="form-control form-control-lg") }}
+                    
+                </div>
+            </fieldset>
+            <div class="form-group">
+
+                {{ form.submit(class="btn btn-outline-info") }}
+            
+            </div>
+        </form>
+    </div>
+    <h3>{{ value }}</h3>
+    {% for post in posts %}
+        <ul class="list-inline">
+          <li class="list-inline-item"><b><a class="article-title" href="#">(Year: {{ post.title }})</a></b></li>
+          <li class="list-inline-item"><b><u><a class="article-title">Movie:</a></u></b></li>
+          <li class="list-inline-item"><a class="mr-2" href="{{ post.content }}"> {{ post.author }}</a></li>
+        </ul>
+{% endfor %}
+{% endblock content %}
+
+
+this is with the loading, jjavascript function
+
+{% extends "layout.html" %}
+{% block content %}
+    <div class="content-section">
+        <form method="POST" action="">
+            {{ form.hidden_tag() }}
+            <fieldset class="form-group">
+                <legend class="border-bottom mb-4">Search</legend>
+                <div class="form-group">
+                
+                    {{ form.query.label(class="form-control-label") }}
+                    {{ form.query(class="form-control form-control-lg") }}
+                    
+                </div>
+            </fieldset>
+            <div class="form-group">
+
+                <div onclick="myFunction()">{{ form.submit(class="btn btn-outline-info") }}</div>
+
+
+                        <script>
+                        function myFunction() {
+                          document.getElementById("demo").innerHTML = "Query Recieved";
+
+                        }
+                        </script>
+                </div>     
+            </div>
+        </form>
+    </div>
+    <h6 id="demo"></h6>
+    <h3>{{ value }}</h3>
+    {% for post in posts %}
+        <ul class="list-inline">
+          <li class="list-inline-item"><b><a class="article-title">({{ post.title }})</a></b></li>
+          <li class="list-inline-item"><b><u><a class="article-title">Movie:</a></u></b></li>
+          <li class="list-inline-item"><a class="mr-2" href="{{ post.content }}">  {{ post.author }}</a></li>
+        </ul>
+{% endfor %}
+{% endblock content %}
+
+<div class="spinner-border" role="status">
+    <span class="sr-only">Loading...</span>
+</div>

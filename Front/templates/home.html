@@ -1,0 +1,57 @@
+{% extends "layout.html" %}
+{% block content %}
+    <div class="content-section">
+        <form method="POST" action="">
+            {{ form.hidden_tag() }}
+            <fieldset class="form-group">
+                <legend class="border-bottom mb-4">Search</legend>
+                <div class="form-group">
+                
+                    {{ form.query.label(class="form-control-label") }}
+                    {{ form.query(class="form-control form-control-lg") }}
+                    
+                </div>
+            </fieldset>
+            <div class="form-group">
+
+                <class onclick="myFunction()">{{ form.submit(class="btn btn-outline-info") }}</class>
+                <script>
+                    function myFunction() 
+                    {
+                      document.getElementById("demo").innerHTML = "This may take a few seconds...";
+
+                      setTimeout(function() {document.getElementById("demo0").innerHTML = "Preparing libraries..."}, 5000);
+                      
+                      setTimeout(function() {document.getElementById("demo1").innerHTML = "Query recieved..."}, 8000);
+
+                      setTimeout(function() {document.getElementById("demo2").innerHTML = "Analysing thousands of movies..."}, 11500);
+
+                      setTimeout(function() {document.getElementById("demo3").innerHTML = "Sorting the results..."}, 17000);
+
+                      setTimeout(function() {document.getElementById("demo4").innerHTML = "Printing..."}, 27500);
+
+                      setTimeout(function() {document.getElementById("demo5").innerHTML = "<--------------------End Result-------------------->"}, 100000);
+
+                    }
+                    </script>  
+
+            </div>
+        </form>
+    </div>
+    <h6 id="demo"></h6>
+    <h6 id="demo0"></h6>
+    <h6 id="demo1"></h6>
+    <h6 id="demo2"></h6>
+    <h6 id="demo3"></h6>
+    <h6 id="demo4"></h6>
+    <h6 id="demo5"></h6>
+    <h3>{{ value }}</h3>
+    {% for post in posts %}
+        <ul class="list-inline">
+          <li class="list-inline-item"><b><a class="article-title" href="#">(Year: {{ post.title }})</a></b></li>
+          <li class="list-inline-item"><b><u><a class="article-title">Movie:</a></u></b></li>
+          <li class="list-inline-item"><a class="mr-2" href="{{ post.content }}"> {{ post.author }}</a></li>
+        </ul>
+{% endfor %}
+<h2 style="text-align: center;" id="demo3"></h2>
+{% endblock content %}
